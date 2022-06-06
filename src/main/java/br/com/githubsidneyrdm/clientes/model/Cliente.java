@@ -1,13 +1,16 @@
-package model;
+package br.com.githubsidneyrdm.clientes.model;
 
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cliente {
 
     @Id
@@ -20,9 +23,10 @@ public class Cliente {
     @Column(name = "data_cadastro")
     private LocalDate dataCadastro;
 
-    public static void main(String[] args) {
-        Cliente cliente = new Cliente();
-
+    @PrePersist
+    public void prePersist(){
+        setDataCadastro(LocalDate.now());
     }
+
 
 }
