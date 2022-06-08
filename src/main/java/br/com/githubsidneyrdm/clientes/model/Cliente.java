@@ -1,5 +1,6 @@
 package br.com.githubsidneyrdm.clientes.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,9 @@ public class Cliente {
     private String nome;
     @Column(nullable = false, length = 11)
     private String cpf;
+
     @Column(name = "data_cadastro")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
     @PrePersist

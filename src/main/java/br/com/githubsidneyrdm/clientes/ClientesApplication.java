@@ -11,16 +11,16 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ClientesApplication {
 
+	/*
 	@Bean
 	public CommandLineRunner run(@Autowired ClienteRepository clienteRepository){
 		return args -> {
 			Cliente cliente = new Cliente();
 			cliente.setNome("Sidney brito");
 			cliente.setCpf("07091538480");
-
 			clienteRepository.save(cliente);
 		};
-	}
+	}*/
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClientesApplication.class, args);
